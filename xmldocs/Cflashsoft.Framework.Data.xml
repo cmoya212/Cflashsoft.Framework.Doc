@@ -281,7 +281,7 @@
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.AsEnumerable``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
             <summary>
-            Enumerates an IDataReader and returns rows as a custom object.
+            Enumerates an IDataReader and returns rows as custom objects.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="reader">The IDataReader.</param>
@@ -299,13 +299,20 @@
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToList``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
             <summary>
-            Enumerates an IDataReader and returns rows as a List of Dictionary column/value items.
+            Enumerates an IDataReader and returns rows as custom concrete or anonymous objects.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="reader">The IDataReader.</param>
             <param name="selector">Function to convert the data.</param>
             <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
-            <returns>A List of Dictionary column/value items.</returns>
+            <returns>A List of custom concrete or anonymous objects.</returns>
+            <example><![CDATA[ ToList((reader) => new
+            {
+            Field1 = reader.GetNullableString(0), //by key works too
+            Field2 = reader.GetNullableInt32(1), //by key works too
+            });
+            ]]>
+            </example>
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToListAsync(System.Data.Common.DbDataReader,System.Boolean)">
             <summary>
@@ -317,13 +324,20 @@
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToListAsync``1(System.Data.Common.DbDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
             <summary>
-            Enumerates an IDataReader and returns rows as a List of Dictionary column/value items.
+            Enumerates an IDataReader and returns rows as custom concrete or anonymous objects.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="reader">The IDataReader.</param>
             <param name="selector">Function to convert the data.</param>
             <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
-            <returns>A List of Dictionary column/value items.</returns>
+            <returns>A List of custom concrete or anonymous objects.</returns>
+            <example><![CDATA[ ToListAsync((reader) => new
+            {
+            Field1 = reader.GetNullableString(0), //by key works too
+            Field2 = reader.GetNullableInt32(1), //by key works too
+            });
+            ]]>
+            </example>
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefault(System.Data.IDataReader,System.Boolean)">
             <summary>
@@ -335,23 +349,39 @@
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefault``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
             <summary>
-            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            Enumerates an IDataReader and returns the first row as a custom concrete or anonymous object.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="reader">The IDataReader.</param>
             <param name="selector">Function to convert the data.</param>
             <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
-            <returns>A Dictionary of column/value items.</returns>
+            <returns>A custom concrete or anonymous object.</returns>
+            <example><![CDATA[ FirstOrDefault((reader) => new
+            {
+            Field1 = reader.GetNullableString(0), //by key works too
+            Field2 = reader.GetNullableInt32(1), //by key works too
+            });
+            
+            See also NullableFirstOrDefault<T>
+            ]]>
+            </example>
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.NullableFirstOrDefault``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
             <summary>
-            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            Enumerates an IDataReader and returns the first row as a custom concrete or anonymous object.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="reader">The IDataReader.</param>
             <param name="selector">Function to convert the data.</param>
             <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
-            <returns>A Dictionary of column/value items.</returns>
+            <returns>A custom concrete or anonymous object.</returns>
+            <example><![CDATA[ NullableFirstOrDefault((reader) => new
+            {
+            Field1 = reader.GetNullableString(0), //by key works too
+            Field2 = reader.GetNullableInt32(1), //by key works too
+            });
+            ]]>
+            </example>
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefaultAsync(System.Data.Common.DbDataReader,System.Boolean)">
             <summary>
@@ -363,23 +393,39 @@
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefaultAsync``1(System.Data.Common.DbDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
             <summary>
-            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            Enumerates an IDataReader and returns the first row as a custom concrete or anonymous object.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="reader">The IDataReader.</param>
             <param name="selector">Function to convert the data.</param>
             <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
-            <returns>A Dictionary of column/value items.</returns>
+            <returns>A custom concrete or anonymous object.</returns>
+            <example><![CDATA[ FirstOrDefaultAsync((reader) => new
+            {
+            Field1 = reader.GetNullableString(0), //by key works too
+            Field2 = reader.GetNullableInt32(1), //by key works too
+            });
+            
+            See also NullableFirstOrDefaultAsync<T>
+            ]]>
+            </example>
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.NullableFirstOrDefaultAsync``1(System.Data.Common.DbDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
             <summary>
-            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            Enumerates an IDataReader and returns the first row as a custom concrete or anonymous object.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="reader">The IDataReader.</param>
             <param name="selector">Function to convert the data.</param>
             <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
-            <returns>A Dictionary of column/value items.</returns>
+            <returns>A custom concrete or anonymous object.</returns>
+            <example><![CDATA[ NullableFirstOrDefaultAAsync((reader) => new
+            {
+            Field1 = reader.GetNullableString(0), //by key works too
+            Field2 = reader.GetNullableInt32(1), //by key works too
+            });
+            ]]>
+            </example>
         </member>
         <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToDataTable(System.Data.IDataReader,System.Boolean,System.Boolean)">
             <summary>
