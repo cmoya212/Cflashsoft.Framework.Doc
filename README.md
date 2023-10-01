@@ -30,6 +30,10 @@ The entire application consists of only the following files:
 5. /styles/site.css Self-explanatory. Feel free to modify the site colors, etc.
 6. /lib/cfxdoc.js The application logic. Do not modify.
 
+## Demo
+
+[See it in action](http://riverfront.solutions/downloads/demos/cfxdoc/index.html)
+
 ## More Information
 
 Learn more about XML comment documentation: [https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/)
