@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cflashsoft.Framework.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Cflashsoft.Framework.Logging.CfFxFileLogger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Logging.CfFxFileLogger.#ctor(Cflashsoft.Framework.Logging.CfFxFileLoggerOptions)">
+            <summary>
+            Initialize a new instance of CfFxFileLogger.
+            </summary>
+            <param name="options">Configuration options.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Logging.CfFxFileLogger.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initialize a new instance of CfFxFileLogger.
+            </summary>
+            <param name="config">Configuration options.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Logging.CfFxFileLogger.BeginScope``1(``0)">
+            <summary>
+            In implementations that support it, begins a logical operation scope.
+            </summary>
+            <typeparam name="TState">The type of the state to begin scope for.</typeparam>
+            <param name="state">The identifier for the scope.</param>
+            <returns>A disposable object that ends the logical operation scope on dispose.</returns>
+            <remarks>NOTE: CfxFileLogger does not implement this functionality.</remarks>
+        </member>
+        <member name="M:Cflashsoft.Framework.Logging.CfFxFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Checks if the given logLevel is enabled.
+            </summary>
+            <param name="logLevel">level to be checked.</param>
+            <returns>true if enabled; false otherwise.</returns>
+            <remarks>NOTE: CfxFileLogger does not implement this functionality. The result will always be true.</remarks>
+        </member>
+        <member name="M:Cflashsoft.Framework.Logging.CfFxFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <summary>
+            Writes a log entry.
+            </summary>
+            <typeparam name="TState">The type of the object to be written.</typeparam>
+            <param name="logLevel">Entry will be written on this level.</param>
+            <param name="eventId">Id of the event.</param>
+            <param name="state">The entry to be written. Can also be an object.</param>
+            <param name="exception">The exception related to this entry.</param>
+            <param name="formatter">Function to create a String message of the state and exception.</param>
+        </member>
+        <member name="T:Cflashsoft.Framework.Logging.CfFxFileLoggerOptions">
+            <summary>
+            Represents options to configure CfxFileLogger.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Logging.CfFxFileLoggerOptions.LogFilePrefix">
+            <summary>
+            Prefix text to prepend to the log files that indicate the application.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Logging.CfFxFileLoggerOptions.LogFilePath">
+            <summary>
+            Destination directory on disk for the log files.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Logging.CfFxFileLoggerOptions.DailyRollover">
+            <summary>
+            Indicates whether log files are rolled over on a daily basis with a new date in the name.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Logging.CfFxFileLoggerOptions.MaxLogFileSize">
+            <summary>
+            Maximum size of a single log file. If the size is exceeded a new log file will be created with sequential number.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Logging.CfFxFileLoggerOptions.WriteFinishedAction">
+            <summary>
+            Custom application function to call when a record is written to the log file.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Logging.CfFxFileLoggerOptions.WriteFailureAction">
+            <summary>
+            Custom application function to call when a record could not be written to the log file.
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Logging.CfFxFileLogProvider">
+            <summary>
+            ILoggerProvider for CfxFileLogger
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Logging.CfFxFileLogProvider.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializing a new instance of this ILoggerProvider.
+            </summary>
+            <param name="config">IConfiguration to read settings from.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Logging.CfFxFileLogProvider.CreateLogger(System.String)">
+            <summary>
+            Creates a new ILogger instance.
+            </summary>
+            <param name="categoryName">The category name for messages produced by the logger.</param>
+            <returns>The instance of ILogger that was created.</returns>
+        </member>
+        <member name="T:Microsoft.Extensions.Logging.CfFxLoggingExtensions">
+            <summary>
+            Dependency injection extension for CfxFileLogger
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.CfFxLoggingExtensions.AddCfFxFileLogger(Microsoft.Extensions.Logging.ILoggingBuilder)">
+            <summary>
+            Register CfxFileLogger as an ILoggerProvider singleton.
+            </summary>
+            <param name="builder">The ILoggingBuilder object.</param>
+            <returns>Method chained ILoggingBuilder.</returns>
+        </member>
+    </members>
+</doc>

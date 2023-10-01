@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cflashsoft.Framework.SecurityCore</name>
+    </assembly>
+    <members>
+        <member name="T:Cflashsoft.Framework.Security.SaltedHashUtility">
+            <summary>
+            Utility to hash passwords with a random salt and store the salt along with the hash in the same structure.
+            Author: C. Moya
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Security.SaltedHashUtility.Provider">
+            <summary>
+            Hash provider.
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Security.SaltedHashUtility.Provider.MD5">
+            <summary>
+            16 byte MD5 hash.
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Security.SaltedHashUtility.Provider.SHA256Managed">
+            <summary>
+            32 byte SHA256 hash.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.SaltedHashUtility.ComputeHash(System.String,System.Int32)">
+            <summary>
+            Computes a hash and stores the salt as part of the result.
+            The result is a 32 byte array with 16 bytes for the hash and 16 bytes for the salt and can be stored
+            in the database in a single 32-byte binary column.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.SaltedHashUtility.ComputeHash(System.String,Cflashsoft.Framework.Security.SaltedHashUtility.Provider,System.Int32)">
+            <summary>
+            Computes a hash and stores the salt as part of the result.
+            The typical result is a 32 byte array with 16 bytes for the hash (32 for SHA256) and 16 bytes for the salt and can be stored
+            in the database in a single 32-byte binary column (48 for SHA256) depending on the provider specified.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.SaltedHashUtility.HashEqual(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Compare a value to a hash with the salt stored as part of the hash itself.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.SaltedHashUtility.HashEqual(System.String,System.Byte[],Cflashsoft.Framework.Security.SaltedHashUtility.Provider,System.Int32)">
+            <summary>
+            Compare a value to a hash with the salt stored as part of the hash itself.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.SaltedHashUtility.HashEqual(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            Compare a value to a hash with the salt stored as part of the hash itself.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.SaltedHashUtility.HashEqual(System.Byte[],System.Byte[],Cflashsoft.Framework.Security.SaltedHashUtility.Provider,System.Int32)">
+            <summary>
+            Compare a value to a hash with the salt stored as part of the hash itself.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.SaltedHashUtility.GetHashLength(Cflashsoft.Framework.Security.SaltedHashUtility.Provider)">
+            <summary>
+            Returns the byte length of the hash of the specified provider.
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Security.TokenExpiredException">
+            <summary>
+            The exception that is thrown when a security token that has an expiration time in the past is received.
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Security.TokenUtility">
+            <summary>
+            Utility to create a self-expiring, short, encrypted string using Rijndael encryption suitable for HTTP headers and cookies.
+            Author: C. Moya
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.String,System.String)">
+            <summary>
+            Create a short encrypted token using Rijndael with a randomized salt and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.Byte[],System.String)">
+            <summary>
+            Create a short encrypted token using Rijndael with a randomized salt and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.String,System.String,System.Int32)">
+            <summary>
+            Create a short encrypted token using Rijndael with a randomized salt and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.Byte[],System.String,System.Int32)">
+            <summary>
+            Create a short encrypted token using Rijndael with a randomized salt and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Create a short encrypted token using Rijndael with a randomized salt and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.Byte[],System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Create a short encrypted token using Rijndael with a randomized salt and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.String,System.String,System.String)">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.Byte[],System.String,System.String)">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.String,System.String,System.Byte[])">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.Byte[],System.String,System.Byte[])">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.Byte[],System.String,System.String,System.Int32)">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.String,System.String,System.Byte[],System.Nullable{System.DateTime})">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.CreateToken(System.Byte[],System.String,System.Byte[],System.Nullable{System.DateTime})">
+            <summary>
+            Create a short encrypted token using Rijndael and optional self-expiration.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.DecryptToken(System.String,System.String)">
+            <summary>
+            Decrypt a token. If the token has expired a SecurityTokenExpiredException will be thrown.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.DecryptTokenAsBytes(System.String,System.String)">
+            <summary>
+            Decrypt a token. If the token has expired a SecurityTokenExpiredException will be thrown.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.DecryptTokenUnsafe(System.String,System.String)">
+            <summary>
+            Decrypt a token even if it has expired.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.DecryptTokenUnsafeAsBytes(System.String,System.String)">
+            <summary>
+            Decrypt a token even if it has expired.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.IsTokenExpired(System.String,System.String)">
+            <summary>
+            Returns true if a token has expired.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Security.TokenUtility.GenerateRandomKey">
+            <summary>
+            Generate a unique key.
+            </summary>
+        </member>
+    </members>
+</doc>

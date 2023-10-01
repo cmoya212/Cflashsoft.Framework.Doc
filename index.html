@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- *** Change title to suit your needs *** -->
+    <title>My App Object Model - CfxDoc</title>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/5.2.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/site.css" />
+</head>
+<body>
+    <div class="container-fluid d-flex flex-column vh-100 overflow-hidden">
+        <nav class="navbar navbar-light bg-light navbar-expand px-0 flex-shrink-0">
+            <!-- *** Change title to suit your needs *** -->
+            <a class="navbar-brand" href="javascript:cfxDoc.hideContentBox()">My App Object Model</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><input id="TocSearchBox" class="form-control" type="text" placeholder="Search" title="Search" /><span id="TocSearchStatus" style="display:none;">Searching...</span></li>
+                <!-- *** Use these buttons to link to your other pages *** -->
+                <!--<li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Link</a></li>-->
+            </ul>
+            <!-- *** Use this button to return back to your main page *** -->
+            <!--<ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="http://riverfront.solutions/downloads" class="nav-link">Back to RiverFront</a></li>
+            </ul>-->
+        </nav>
+        <div class="row flex-grow-1 overflow-hidden">
+            <div class="col-3 mh-100 overflow-auto py-2">
+                <div id="InitializingBox">
+                    <span>Loading...</span> <span id="InitializingProgress"></span>
+                </div>
+                <div id="LoadErrorBox" style="display:none;">
+                    <span>Could not load documentation files. Error:</span> <span id="LoadErrorMessage"></span>
+                </div>
+                <div id="ContentBox" style="display:none;">
+                    <ul id="TableOfContents">
+                    </ul>
+                    <ul id="SearchResults" style="display:none;">
+                    </ul>
+                </div>
+            </div>
+            <div class='col mh-100 overflow-auto'>
+                <div id="ContentWelcomeTitleBox" class='row flex-shrink-0'>
+                    <div class="col">
+                        <!-- *** Change welcome page title to suit your needs *** -->
+                        <h2>CfxDoc - My App Object Model</h2>
+                    </div>
+                </div>
+                <div id="ContentWelcomeBodyBox" class='row flex-grow-1'>
+                    <div class="col mh-100 overflow-auto py-2">
+                        <!-- *** Change welcome page content to suit your needs *** -->
+                        <h3>Introduction</h3>
+                        <p>Easily turn your .NET XML comments into documentation. Dead simple to use. No need for utilities that use reflection and output static HTML files. Just drop the *.xml comment files that Visual Studio generates and you're good to go. Inspired by DocFx, but hopefully even simpler to use considering you have one web page here versus dozens of static HTML files.</p>
+                        <h3>Benefits</h3>
+                        <ol><li>Simple to configure.</li><li>Super-fast navigation. No page load blinks (it's a SPA application).</li><li>Fast search all properties, not just page titles.</li><li>Easy to publish.</li></ol>
+                        <h3>Configuration</h3>
+                        <p>The only required configuration takes place in the "config.js" file in the root of the project. It contains the paths to the XML comment files that will be loaded.</p>
+                        <p>Other customizations can easily be made in the index.html. Common modifications, such as title and this page itself, are clearly marked.</p>
+                        <h3>Publish</h3>
+                        <p>Just copy the project and XML comment files to your destination and you're done. The application is completely client-side and requires no special web server configuration.</p>
+                        <p>The entire application consists of only the following files:</p>
+                        <ol>
+                            <li>index.html The main page. Feel free to customize the sections that are marked as customizable.</li>
+                            <li>favicon.ico The site icon. Feel free to change it.</li>
+                            <li>config.js Required list of your xml comment files in /xmldocs (or elsewhere).</li>
+                            <li>/xmldocs/* Your xml comment files (optional).</li>
+                            <li>/styles/site.css Self-explanatory. Feel free to modify the site colors, etc.</li>
+                            <li>/lib/cfxdoc.js The application logic. Do not modify.</li>
+                        </ol>
+                        <h3>More Information</h3>
+                        <p>Learn more about XML comment documentation: <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/">https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/</a></p>
+                    </div>
+                </div>
+                <div id="ContentTitleBox" class='row flex-shrink-0' style="display:none;">
+                    <div class="col">
+                        <h1 id="TitleText" style="word-wrap:anywhere;"></h1>
+                        <h1 id="TitleText2" style="word-wrap:anywhere;font-size:smaller;"></h1>
+                    </div>
+                </div>
+                <div id="ContentBodyBox" class='row flex-grow-1' style="display:none;">
+                    <div class="col mh-100 overflow-auto py-2">
+                        <h2>Definition</h2>
+                        <p style="font-size:smaller;">Namespace: <span id="NamespaceText"></span></p>
+                        <p style="font-size:smaller;">Assembly: <span id="AssemblyText"></span></p>
+                        <p><span id="SummaryText"></span></p>
+                        <h3>Parameters</h3>
+                        <p><ul id="ParametersText" style="padding-left:0;"></ul></p>
+                        <h3>Returns</h3>
+                        <p><span id="ReturnsText"></span></p>
+                        <h3>Example</h3>
+                        <p><span id="ExampleText"></span></p>
+                        <h3>Remarks</h3>
+                        <p><span id="RemarksText"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row flex-shrink-0 bg-light">
+            <div class="col-12 py-1">
+                <!-- *** The following footer cannot be removed except by permission from RiverFront Software *** -->
+                <!-- *** Visit http://riverfront.solutions for licensing information *** -->
+                <p>CfxDoc Code Library Documentation |  © <script>document.write((new Date()).getFullYear());</script> <a href="http://riverfront.solutions">RiverFront Solutions</a></p>
+            </div>
+        </div>
+    </div>
+    <ul style="display:none;">
+        <li id="TocNestedItemTemplate" cfxdoc-item="TocNestedItem">
+            <span class="toc_caret" cfxdoc-item="TocNestedItemCaret">Label</span>
+            <ul class="toc_nested" cfxdoc-item="TocNestedItemContents" title="">
+            </ul>
+        </li>
+        <li id="TocLinkTemplate" cfxdoc-item="TocLink"><span class="toc_link" cfxdoc-item="TocLinkLabel" cfxdoc-link-id="" title="">Label</span></li>
+        <li id="SearchResultLinkTemplate" cfxdoc-item="SearchResultLink"><span class="toc_link" cfxdoc-item="SearchResultLinkLabel" cfxdoc-link-id="" title="">Label</span></li>
+    </ul>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/5.2.3/bootstrap.bundle.js"></script>
+    <script src="config.js"></script>
+    <script src="lib/cfxdoc.js"></script>
+    <script>
+        $(function () {
+            cfxDoc.init();
+        });
+    </script>
+</body>
+</html>

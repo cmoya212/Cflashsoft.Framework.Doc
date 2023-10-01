@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cflashsoft.Framework.Http</name>
+    </assembly>
+    <members>
+        <member name="T:Cflashsoft.Framework.Http.HttpVerb">
+            <summary>
+            HTTP verb enumeration.
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpVerb.NotSet">
+            <summary>
+            Not set
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpVerb.Get">
+            <summary>
+            Get
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpVerb.Post">
+            <summary>
+            Post
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpVerb.Put">
+            <summary>
+            Put
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpVerb.Patch">
+            <summary>
+            Patch
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpVerb.Delete">
+            <summary>
+            Delete
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Http.HttpContentType">
+            <summary>
+            Enumeration for media type formatters.
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpContentType.NotSet">
+            <summary>
+            Not set
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpContentType.Form">
+            <summary>
+            Form
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpContentType.Json">
+            <summary>
+            Json
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpContentType.Xml">
+            <summary>
+            Xml
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpContentType.Bson">
+            <summary>
+            Bson
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpContentType.Multipart">
+            <summary>
+            Multipart
+            </summary>
+        </member>
+        <member name="F:Cflashsoft.Framework.Http.HttpContentType.String">
+            <summary>
+            String
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Http.ExtendedHttpMethod">
+            <summary>
+            Additional HTTP methods that are not included by default with the standard Web API HttpMethod helper class.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.ExtendedHttpMethod.Patch">
+            <summary>
+            Represents an HTTP PATCH protocol method that is used to modify an entity identified by a URI.
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Http.HttpApiException">
+            <summary>
+            The exception that is thrown when an HTTP request is unsuccessful.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiException.StatusCode">
+            <summary>
+            The HTTP status code of the response.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiException.Content">
+            <summary>
+            The content of the response represented as a string.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the HttpApiException class.
+            </summary>
+            <param name="statusCode">The HTTP status code of the response.</param>
+            <param name="content">The string content of the response.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiException.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the HttpApiException class.
+            </summary>
+            <param name="message">A message that describes the current exception.</param>
+            <param name="statusCode">The HTTP status code of the response.</param>
+            <param name="content">The string content of the response.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiException.#ctor(System.String,System.Exception,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the HttpApiException class.
+            </summary>
+            <param name="message">A message that describes the current exception.</param>
+            <param name="statusCode">The HTTP status code of the response.</param>
+            <param name="content">The string content of the response.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:Cflashsoft.Framework.Http.HttpApiExtensions">
+            <summary>
+            Extensions for HttpClient to simplify typical API Send and Read commands and retrieve API errors and go fuck yourself.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsAsync``1(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <returns>Depending on TResult, a concrete class that the content can deserialize to.</returns>
+            <remarks>Special handling is given to JToken, String, and Byte Array TResult. Non-generic methods for those 3 types also exist in these extensions. See ApiAsJTokenAsync, ApiAsStringAsync, and ApiAsByteArrayAsync.</remarks>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsAsync``1(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Object,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},Cflashsoft.Framework.Http.HttpContentType)">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="value">The data to post or put (not valid for get and delete requests)</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <param name="contentType">The HttpContentType to use when sending the data.</param>
+            <returns>Depending on TResult, a concrete class that the content can deserialize to.</returns>
+            <remarks>Special handling is given to JToken, String, and Byte Array TResult. Non-generic methods for those 3 types also exist in these extensions. See ApiAsJTokenAsync, ApiAsStringAsync, and ApiAsByteArrayAsync.</remarks>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsJTokenAsync(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line and receive a JToken dictionary of the result.
+            </summary>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <returns>A JToken dictionary.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsJTokenAsync(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Object,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},Cflashsoft.Framework.Http.HttpContentType)">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line and receive a JToken dictionary of the result.
+            </summary>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="value">The data to post or put (not valid for get and delete requests)</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <param name="contentType">The HttpContentType to use when sending the data.</param>
+            <returns>A JToken dictionary.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsStringAsync(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line and receive the result as a string.
+            </summary>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <returns>A string containing the contents of the response.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsStringAsync(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Object,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},Cflashsoft.Framework.Http.HttpContentType)">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line and receive the result as a string.
+            </summary>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="value">The data to post or put (not valid for get and delete requests)</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <param name="contentType">The HttpContentType to use when sending the data.</param>
+            <returns>A string containing the contents of the response.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsByteArrayAsync(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line and receive the result as a byte array.
+            </summary>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <returns>A byte array.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ApiAsByteArrayAsync(System.Net.Http.HttpClient,Cflashsoft.Framework.Http.HttpVerb,System.String,System.Object,System.Net.Http.Headers.AuthenticationHeaderValue,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},Cflashsoft.Framework.Http.HttpContentType)">
+            <summary>
+            Utility function for HttpClient to perform an HTTP request in one line and receive the result as a byte array.
+            </summary>
+            <param name="client">The HttpClient.</param>
+            <param name="verb">The HTTP verb to perform.</param>
+            <param name="requestUri">The request endpoint.</param>
+            <param name="value">The data to post or put (not valid for get and delete requests)</param>
+            <param name="authenticationHeader">Authentication header to attach to the request.</param>
+            <param name="headers">Misc headers to attach to the request.</param>
+            <param name="contentType">The HttpContentType to use when sending the data.</param>
+            <returns>A byte array.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ReadAsApiResponseAsync``1(System.Net.Http.HttpContent,System.Net.HttpStatusCode,System.Boolean,System.Net.Http.Headers.HttpResponseHeaders)">
+            <summary>
+            Intelligently read the HttpContent as a particular class of object.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="content">The HttpContent of the response.</param>
+            <param name="statusCode">The HTTP status code of the response.</param>
+            <param name="isSuccessStatusCode">Indicates whether the HTTP status code should be considered a success status code.</param>
+            <param name="responseHeaders">The headers returned in the response.</param>
+            <returns>Will return either 1) a JToken object representing the contents, 2) a plain string of the contents, 3) a byte array, 4) or a concrete class that the content can deserialize to.</returns>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ReadAsJTokenAsync(System.Net.Http.HttpContent)">
+            <summary>
+            Deserialize the HttpContent into a JToken hierarchy dictionary.
+            </summary>
+            <param name="content">The HttpContent of the response.</param>
+            <returns>A JToken dictionary.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiExtensions.ReadAsJTokenAsync(System.Net.Http.HttpContent,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Deserialize the HttpContent into a JToken hierarchy dictionary.
+            </summary>
+            <param name="content">The HttpContent of the response.</param>
+            <param name="isSuccessStatusCode">Indicates whether the HTTP status code should be considered a success status code.</param>
+            <param name="ignoreParsingErrorOnBadStatusCode"></param>
+            <param name="ignoreAllParsingErrors"></param>
+            <returns>A JToken dictionary.</returns>
+        </member>
+        <member name="T:Cflashsoft.Framework.Http.HttpApiResult`1">
+            <summary>
+            Represents a result returned by an HTTP API server. NOTE: this is a client class used to deserialize and read various types of responses. It should not be used by an ASP.NET WebAPI server to return results. Instead use RESTful models with Ok(MyModel), BadRequest(ModelState), Content(HttpStatusCode, new { [Errors], [MyModel] }), etc.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.ResponseHeaders">
+            <summary>
+            Headers returned in the response.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.Details">
+            <summary>
+            Error information and exception details for the response.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.Value">
+            <summary>
+            Contents of the response.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.StatusCode">
+            <summary>
+            HTTP status code of the response.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.ClientException">
+            <summary>
+            Exception thrown by HttpClient. 
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.IsSuccessStatusCode">
+            <summary>
+            Returns true if the HTTP status code represents a successful status.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.HasClientException">
+            <summary>
+            Returns true if HttpClient threw an exception during the request such as when a server was not found.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.HasModelStateErrors">
+            <summary>
+            Returns true if there are modelstate errors in the response that are typically returned by ASP.NET WebApi servers.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.HasGenericErrors">
+            <summary>
+            Returns true if there are typical errors in the response returned by many API servers.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResult`1.HasErrors">
+            <summary>
+            Returns true if there are any errors in this response including non-200 http status, exceptions, modelstate errors, or typical json errors.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.#ctor">
+            <summary>
+            Initializes a new instance of the HttpApiResult class.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.#ctor(`0,Cflashsoft.Framework.Http.HttpApiResultDetails)">
+            <summary>
+            Initializes a new instance of the HttpApiResult class.
+            </summary>
+            <param name="value">The underlying response object.</param>
+            <param name="details">Additional meta details returned by the response.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetErrors(System.Boolean)">
+            <summary>
+            Returns a flattened list of all errors including exceptions, model errors, and detected json error collections.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetClientExceptionError">
+            <summary>
+            Returns the exception error message thrown by the HttpClient.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetDetailedClientExceptionError">
+            <summary>
+            Returns the exception error message thrown by the HttpClient with details.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetStatusError">
+            <summary>
+            Returns the HTTP status code description.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetDetailedStatusError">
+            <summary>
+            Returns the HTTP status code description together with exception information if any.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetModelStateErrors">
+            <summary>
+            Returns a flattened list of modelstate errors (typically returned by ASP.NET WebApi servers).
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetGenericErrors">
+            <summary>
+            Returns a list of generic errors (typically returned by many API servers).
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.AssertSuccess">
+            <summary>
+            Throws an exception if the api result contains errors.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.AssertSuccess(System.String)">
+            <summary>
+            Throws an exception if the api result contains errors.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.AssertIsSuccessStatusCode">
+            <summary>
+            Throws an exception if the api result is not an HTTP success.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.AssertIsSuccessStatusCode(System.String)">
+            <summary>
+            Throws an exception if the api result is not an HTTP success.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetValueOnSuccess(System.Boolean)">
+            <summary>
+            Returns the api result value if no errors are present, otherwise returns a null or default value.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResult`1.GetResponseCookies">
+            <summary>
+            Extract response set-cookie values from the response headers.
+            </summary>
+        </member>
+        <member name="T:Cflashsoft.Framework.Http.HttpApiResultDetails">
+            <summary>
+            Represents response details sent by an HTTP API server.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.Message">
+            <summary>
+            API message text.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.MessageDetail">
+            <summary>
+            API message details.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.ModelState">
+            <summary>
+            Model state validation messages and errors.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.ExceptionMessage">
+            <summary>
+            Exception message text.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.ExceptionType">
+            <summary>
+            Exception .NET type name.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.StackTrace">
+            <summary>
+            Stack trace for the exception. NOTE: this information is not populated by ASP.NET when debug = false.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.Code">
+            <summary>
+            API message code.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.Errors">
+            <summary>
+            A collection of errors returned from the server.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Http.HttpApiResultDetails.Error">
+            <summary>
+            An error string or object returned from the server.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Http.HttpApiResultDetails.FromJToken(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Returns an HttpApiResultDetails instance converted from a JSON.NET JToken with similar fields.
+            </summary>
+        </member>
+    </members>
+</doc>

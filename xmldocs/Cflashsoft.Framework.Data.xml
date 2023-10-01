@@ -1,0 +1,795 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cflashsoft.Framework.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Cflashsoft.Framework.Data.DataExtensions">
+            <summary>
+            Extensions for ADO.NET to simplify data access.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteQuery(System.Data.IDbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteQuery(System.Data.IDbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteQuery(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.CommandBehavior,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="behavior">One of the CommandBehavior values.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteQueryAsync(System.Data.Common.DbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteQueryAsync(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteQueryAsync(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.CommandBehavior,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="behavior">One of the CommandBehavior values.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteSequential(System.Data.IDbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader and provides a way for the DataReader to handle rows that contain columns with large binary values.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteSequentialAsync(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the CommandText against the Connection and builds an IDataReader and provides a way for the DataReader to handle rows that contain columns with large binary values.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>An IDataReader object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes an SQL statement against the Connection object of a .NET data provider, and returns the number of rows affected.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes an SQL statement against the Connection object of a .NET data provider, and returns the number of rows affected.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteNonQueryAsync(System.Data.Common.DbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes an SQL statement against the Connection object of a .NET data provider, and returns the number of rows affected.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteNonQueryAsync(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes an SQL statement against the Connection object of a .NET data provider, and returns the number of rows affected.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteScalar(System.Data.IDbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the query, and returns the first column of the first row in the resultset returned by the query. Extra columns or rows are ignored.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The first column of the first row in the resultset.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteScalar(System.Data.IDbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the query, and returns the first column of the first row in the resultset returned by the query. Extra columns or rows are ignored.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The first column of the first row in the resultset.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteScalarAsync(System.Data.Common.DbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the query, and returns the first column of the first row in the resultset returned by the query. Extra columns or rows are ignored.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The first column of the first row in the resultset.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ExecuteScalarAsync(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Executes the query, and returns the first column of the first row in the resultset returned by the query. Extra columns or rows are ignored.
+            </summary>
+            <param name="cn">The database connection to execute the query on. The connection will be opened if it is closed.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>The first column of the first row in the resultset.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.OpenIfClosed(System.Data.IDbConnection)">
+            <summary>
+            Utility method to open a DbConnection connection if it is currently closed.
+            </summary>
+            <param name="cn">The database connection to open.</param>
+            <returns>The same connection object for chaining.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.OpenIfClosedAsync(System.Data.Common.DbConnection)">
+            <summary>
+            Utility method to open a DbConnection connection if it is currently closed.
+            </summary>
+            <param name="cn">The database connection to open.</param>
+            <returns>The same connection object for chaining.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.OpenIfClosed(System.Data.IDbCommand)">
+            <summary>
+            Utility method to open a DbConnection connection if it is currently closed.
+            </summary>
+            <param name="cmd">The command whose connection will be opened.</param>
+            <returns>The same command object for chaining.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.OpenIfClosedAsync(System.Data.Common.DbCommand)">
+            <summary>
+            Utility method to open a DbConnection connection if it is currently closed.
+            </summary>
+            <param name="cmd">The command whose connection will be opened.</param>
+            <returns>The same command object for chaining.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.CreateCommand(System.Data.IDbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Utility method to create and configure a IDbCommand object in a single call.
+            </summary>
+            <param name="cn">The connection to be associated with the command.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>A IDbCommand object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.CreateCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Utility method to create and configure a IDbCommand object in a single call.
+            </summary>
+            <param name="cn">The connection to be associated with the command.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>A IDbCommand object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.CreateCommand(System.Data.Common.DbConnection,System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Utility method to create and configure a IDbCommand object in a single call.
+            </summary>
+            <param name="cn">The connection to be associated with the command.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>A IDbCommand object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.CreateCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Utility method to create and configure a IDbCommand object in a single call.
+            </summary>
+            <param name="cn">The connection to be associated with the command.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>A IDbCommand object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ConfigureCommand(System.Data.IDbCommand,System.String,System.Data.CommandType,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Utility method to create and configure a IDbCommand object in a single call.
+            </summary>
+            <param name="cmd">The command object to configure.</param>
+            <param name="commandText">The text command to run against the data source.</param>
+            <param name="commandType">Indicates or specifies how the CommandText property is interpreted.</param>
+            <param name="parameters">The parameters of the SQL statement or stored procedure.</param>
+            <returns>A IDbCommand object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.AddParameter(System.Data.IDbCommand,System.String,System.Object,System.Nullable{System.Data.DbType},System.Nullable{System.Int32},System.Nullable{System.Byte},System.Nullable{System.Byte},System.Nullable{System.Data.ParameterDirection},System.String,System.Nullable{System.Data.DataRowVersion})">
+            <summary>
+            Utility method to add parameters to a IDbCommand object in a single call.
+            </summary>
+            <param name="cmd">The command object to add parameters to.</param>
+            <param name="parameterName">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramType">The DbType of the parameter.</param>
+            <param name="size">The size of the parameter.</param>
+            <param name="precision">Indicates the precision of numeric parameters.</param>
+            <param name="scale">Indicates the scale of numeric parameters.</param>
+            <param name="direction">Indicates whether the parameter is input-only, output-only, bidirectional, or a stored procedure return value parameter</param>
+            <param name="sourceColumn">Indicates the name of the source column that is mapped to the DataSet and used for loading or returning the Value.</param>
+            <param name="sourceVersion">Indicates the DataRowVersion to use when loading Value.</param>
+            <returns>A IDbDataParameter object.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetReaderColumns(System.Data.IDataReader)">
+            <summary>
+            Returns the columns in an IDataReader as a KeyValuePair collection.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <returns>A KeyValuePair collection.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetReaderRow(System.Data.IDataReader)">
+            <summary>
+            Returns a row from an IDataReader as a Dictionary of column and value.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <returns>A Dictionary of column and value.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.AsEnumerable(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns rows as Dictionary of column and value.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>Enumerable of dictionary column/value pairs.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.AsEnumerable``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns rows as a custom object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The IDataReader.</param>
+            <param name="selector">Function to convert the data.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>Enumerable of T.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToList(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns rows as a List of Dictionary column/value items.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A List of Dictionary column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToList``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns rows as a List of Dictionary column/value items.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The IDataReader.</param>
+            <param name="selector">Function to convert the data.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A List of Dictionary column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToListAsync(System.Data.Common.DbDataReader,System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns rows as a List of Dictionary column/value items.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A List of Dictionary column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToListAsync``1(System.Data.Common.DbDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns rows as a List of Dictionary column/value items.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The IDataReader.</param>
+            <param name="selector">Function to convert the data.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A List of Dictionary column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefault(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A Dictionary of column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefault``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The IDataReader.</param>
+            <param name="selector">Function to convert the data.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A Dictionary of column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.NullableFirstOrDefault``1(System.Data.IDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The IDataReader.</param>
+            <param name="selector">Function to convert the data.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A Dictionary of column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefaultAsync(System.Data.Common.DbDataReader,System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A Dictionary of column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.FirstOrDefaultAsync``1(System.Data.Common.DbDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The IDataReader.</param>
+            <param name="selector">Function to convert the data.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A Dictionary of column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.NullableFirstOrDefaultAsync``1(System.Data.Common.DbDataReader,System.Func{System.Data.IDataReader,``0},System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns the first row as a Dictionary of column/value items.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The IDataReader.</param>
+            <param name="selector">Function to convert the data.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A Dictionary of column/value items.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToDataTable(System.Data.IDataReader,System.Boolean,System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns a DataTable.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <param name="useDataTableLoad">If true, uses the classic ADO.NET DataTable.Load() function.</param>
+            <returns>A DataTable.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.ToDataTableAsync(System.Data.Common.DbDataReader,System.Boolean)">
+            <summary>
+            Enumerates an IDataReader and returns a DataTable.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="closeReader">Indicates whether to close the connection when the enumeration completes.</param>
+            <returns>A DataTable.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableString(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the string value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The string value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableBoolean(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the bool value of the specified column if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>A boolean.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableByte(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the 8-bit unsigned integer value of the specified column if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The 8-bit unsigned integer value of the specified column.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableChar(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the character value of the specified column if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The character value of the specified column.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableDateTime(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the date and time data value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The date and time data value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableDecimal(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the fixed-position numeric value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The fixed-position numeric value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableDouble(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the double-precision floating point number of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The double-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableFloat(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the single-precision floating point number of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The single-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableGuid(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Returns the GUID value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The GUID value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableInt16(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the 16-bit signed integer value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The 16-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableInt32(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the 32-bit signed integer value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The 32-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableInt64(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the 64-bit signed integer value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="i">The index of the field to find.</param>
+            <returns>The 64-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableString(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the string value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The string value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the bool value of the specified column if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>A boolean.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 8-bit unsigned integer value of the specified column if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 8-bit unsigned integer value of the specified column.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableChar(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the character value of the specified column if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The character value of the specified column.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the date and time data value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The date and time data value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the fixed-position numeric value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The fixed-position numeric value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the double-precision floating point number of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The double-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableFloat(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the single-precision floating point number of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The single-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableGuid(System.Data.IDataReader,System.String)">
+            <summary>
+            Returns the GUID value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The GUID value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableInt16(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 16-bit signed integer value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 16-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 32-bit signed integer value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 32-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetNullableInt64(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 64-bit signed integer value of the specified field if IsDBNull is false otherwise returns null.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 64-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetString(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the string value of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The string value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the bool value of the specified column.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>A boolean.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 8-bit unsigned integer value of the specified column.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 8-bit unsigned integer value of the specified column.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetChar(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the character value of the specified column.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The character value of the specified column.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the date and time data value of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The date and time data value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the fixed-position numeric value of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The fixed-position numeric value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the double-precision floating point number of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The double-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetFloat(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the single-precision floating point number of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The single-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetGuid(System.Data.IDataReader,System.String)">
+            <summary>
+            Returns the GUID value of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The GUID value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetInt16(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 16-bit signed integer value of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 16-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 32-bit signed integer value of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 32-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataExtensions.GetInt64(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the 64-bit signed integer value of the specified field.
+            </summary>
+            <param name="reader">The IDataReader.</param>
+            <param name="name">The name of the field.</param>
+            <returns>The 64-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="T:Cflashsoft.Framework.Data.DataReaderBinaryStream">
+            <summary>
+            Exposes a forward-only stream whose source is a DB binary column for use with FileStreamResult ActionResult in ASP.NET MVC.
+            </summary>
+            <remarks>
+            For use with FileStreamResult ActionResult in ASP.NET MVC.
+            Adapted from http://www.codeproject.com/Articles/140713/Download-and-Upload-Images-from-SQL-Server-via-ASP 
+            </remarks>
+        </member>
+        <member name="P:Cflashsoft.Framework.Data.DataReaderBinaryStream.MimeType">
+            <summary>
+            Returns the mime type of the file represented by this stream.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Data.DataReaderBinaryStream.CanRead">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports reading.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Data.DataReaderBinaryStream.CanSeek">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports seeking.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Data.DataReaderBinaryStream.CanWrite">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports writing.
+            </summary>
+        </member>
+        <member name="P:Cflashsoft.Framework.Data.DataReaderBinaryStream.Length">
+            <summary>
+            When overridden in a derived class, gets the length in bytes of the stream.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Cflashsoft.Framework.Data.DataReaderBinaryStream.Position">
+            <summary>
+            When overridden in a derived class, gets or sets the position within the current stream.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.#ctor(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Inititializes a new instance of the DataContext class.
+            </summary>
+            <param name="reader">The DataReader that contains the data.</param>
+            <param name="binaryColumnIndex">The column position that contains the byte data.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.#ctor(System.Data.IDataReader,System.Int32,System.String)">
+            <summary>
+            Inititializes a new instance of the DataContext class.
+            </summary>
+            <param name="reader">The DataReader that contains the data.</param>
+            <param name="binaryColumnIndex">The column position that contains the byte data.</param>
+            <param name="mimeType">The mime type of the file contained in the byte data.</param>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.Flush">
+            <summary>
+            When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+            </summary>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Not supported. When overridden in a derived class, sets the position within the current stream.
+            </summary>
+            <param name="offset">A byte offset relative to the <paramref name="origin" /> parameter.</param>
+            <param name="origin">A value of type <see cref="T:System.IO.SeekOrigin" /> indicating the reference point used to obtain the new position.</param>
+            <returns>
+            The new position within the current stream.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.SetLength(System.Int64)">
+            <summary>
+            Not supported. When overridden in a derived class, sets the length of the current stream.
+            </summary>
+            <param name="value">The desired length of the current stream in bytes.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
+            </summary>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between <paramref name="offset" /> and (<paramref name="offset" /> + <paramref name="count" /> - 1) replaced by the bytes read from the current source.</param>
+            <param name="offset">The zero-based byte offset in <paramref name="buffer" /> at which to begin storing the data read from the current stream.</param>
+            <param name="count">The maximum number of bytes to be read from the current stream.</param>
+            <returns>
+            The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.
+            </returns>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Not supported. When overridden in a derived class, writes a sequence of bytes to the current stream and advances the current position within this stream by the number of bytes written.
+            </summary>
+            <param name="buffer">An array of bytes. This method copies <paramref name="count" /> bytes from <paramref name="buffer" /> to the current stream.</param>
+            <param name="offset">The zero-based byte offset in <paramref name="buffer" /> at which to begin copying bytes to the current stream.</param>
+            <param name="count">The number of bytes to be written to the current stream.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Cflashsoft.Framework.Data.DataReaderBinaryStream.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.IO.Stream" /> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
+        </member>
+    </members>
+</doc>
