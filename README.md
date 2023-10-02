@@ -26,13 +26,13 @@ The entire application consists of only the following files:
 1. **index.html** The main page. Feel free to customize the sections that are marked as customizable.
 2. **favicon.ico** The site icon. Feel free to change it.
 3. **config.js** Required list of your xml comment files in /xmldocs (or elsewhere).
-4. **/xmldocs/*** Your xml comment files (optional).
+4. **/xmldocs/*** Your xml comment files (optional because the files can be location anywhere).
 5. **/styles/site.css** Self-explanatory. Feel free to modify the site colors, etc.
-6. **/lib/cfxdoc.js** The application logic. Do not modify.
+6. **/lib/cfxdoc.js** The application logic. Do not modify... but if you do, make sure to contribute improvements to the Github repo.
 
 ## Demo
 
-[See it in action](http://riverfront.solutions/downloads/demos/cfxdoc/index.html)
+[See it in action!](http://riverfront.solutions/downloads/demos/cfxdoc/index.html)
 
 ## More Information
 
