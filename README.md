@@ -23,12 +23,12 @@ Just copy the project and XML comment files to your destination and you're done.
 
 The entire application consists of only the following files:
 
-1. index.html The main page. Feel free to customize the sections that are marked as customizable.
-2. favicon.ico The site icon. Feel free to change it.
-3. config.js Required list of your xml comment files in /xmldocs (or elsewhere).
-4. /xmldocs/* Your xml comment files (optional).
-5. /styles/site.css Self-explanatory. Feel free to modify the site colors, etc.
-6. /lib/cfxdoc.js The application logic. Do not modify.
+1. **index.html** The main page. Feel free to customize the sections that are marked as customizable.
+2. **favicon.ico** The site icon. Feel free to change it.
+3. **config.js** Required list of your xml comment files in /xmldocs (or elsewhere).
+4. **/xmldocs/*** Your xml comment files (optional).
+5. **/styles/site.css** Self-explanatory. Feel free to modify the site colors, etc.
+6. **/lib/cfxdoc.js** The application logic. Do not modify.
 
 ## Demo
 
